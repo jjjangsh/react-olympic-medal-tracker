@@ -14,13 +14,13 @@ const App = () => {
   const addCountryHandler = (e) => {
     e.preventDefault();
 
-    if (nation.trim() === '') {
+    if (nation === '') {
       alert('국가명을 입력하세요.');
       return;
     }
 
     const countryExists = countries.some(
-      (country) => country.country === nation.trim()
+      (country) => country.country === nation
     );
     if (countryExists) {
       alert('이미 존재하는 국가입니다.');
@@ -61,7 +61,7 @@ const App = () => {
   const updateCountryHandler = (e) => {
     e.preventDefault();
 
-    if (nation.trim() === '') {
+    if (nation === '') {
       alert('국가명을 입력하세요');
       return;
     }
@@ -72,13 +72,13 @@ const App = () => {
     }
 
     const alreadyExCountry = countries.find(
-      (country) => country.country === nation.trim()
+      (country) => country.country === nation
     );
 
     if (alreadyExCountry) {
       setCountries(
         countries.map((country) =>
-          country.country === nation.trim()
+          country.country === nation
             ? {
                 ...country,
                 gold: Number(goldMedal),
@@ -99,7 +99,7 @@ const App = () => {
       <h1>2024 파리 올림픽 메달 현황🌍</h1>
       <MedalForm
         nation={nation}
-        setNation={setNation}
+        setNation={(value) => setNation(value.replaceAll(' ', ''))}
         goldMedal={goldMedal}
         setGoldMedal={setGoldMedal}
         silverMedal={silverMedal}
@@ -109,11 +109,13 @@ const App = () => {
         addCountryHandler={addCountryHandler}
         updateCountryHandler={updateCountryHandler}
       />
-      {countries.length > 0 && (
+      {countries.length > 0 ? (
         <CountryMedalList
           countries={countries}
           deleteCountryHandler={deleteCountryHandler}
         />
+      ) : (
+        <p>아직 추가된 국가가 없습니다. 메달을 추적하세요!</p>
       )}
     </div>
   );
