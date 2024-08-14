@@ -6,6 +6,8 @@
 
 ### 2024 파리 올림픽에서 각 나라가 획득한 메달 수를 추적하는 Olympic Medal Tracker 입니다.
 
+- 링크 : https://jjjangsh.github.io/react-olympic-medal-tracker/
+
 - 상태 관리 : 여러 컴포넌트에서 간단한 상태를 관리하는 데 useState훅을 사용했고 상태가 변경될 때마다 컴포넌트가 리렌더링 됩니다.
 
 - 제출 폼 UI : 나라 이름과 금, 은, 동 메달 수를 입력할 수 있는 폼
