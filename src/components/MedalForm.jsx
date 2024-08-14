@@ -111,6 +111,7 @@ const MedalForm = ({ countries, setCountries }) => {
             <td>
               <input
                 min={0}
+                max={100}
                 type="number"
                 value={goldMedal}
                 onChange={(e) => setGoldMedal(Number(e.target.value))}
@@ -120,6 +121,7 @@ const MedalForm = ({ countries, setCountries }) => {
             <td>
               <input
                 min={0}
+                max={100}
                 type="number"
                 value={silverMedal}
                 onChange={(e) => setSilverMedal(Number(e.target.value))}
@@ -129,6 +131,7 @@ const MedalForm = ({ countries, setCountries }) => {
             <td>
               <input
                 min={0}
+                max={100}
                 type="number"
                 value={bronzeMedal}
                 onChange={(e) => setBronzeMedal(Number(e.target.value))}
