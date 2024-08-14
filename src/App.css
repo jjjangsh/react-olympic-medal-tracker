@@ -52,11 +52,14 @@ table {
   margin-top: 20px;
 }
 
-table, th, td {
+table,
+th,
+td {
   border: 1px solid #ddd;
 }
 
-th, td {
+th,
+td {
   padding: 10px;
   text-align: center;
 }
@@ -80,9 +83,13 @@ tbody tr:hover {
 }
 
 .resultTable {
-  width: 91.5%;
+  width: 91%;
 }
 
 .resultBox {
   display: contents;
+}
+
+.formInput {
+  width: 170px;
 }

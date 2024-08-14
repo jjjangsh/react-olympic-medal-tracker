@@ -110,6 +110,7 @@ const MedalForm = ({ countries, setCountries }) => {
             </td>
             <td>
               <input
+                className="formInput"
                 min={0}
                 max={100}
                 type="number"
@@ -120,6 +121,7 @@ const MedalForm = ({ countries, setCountries }) => {
             </td>
             <td>
               <input
+                className="formInput"
                 min={0}
                 max={100}
                 type="number"
@@ -130,6 +132,7 @@ const MedalForm = ({ countries, setCountries }) => {
             </td>
             <td>
               <input
+                className="formInput"
                 min={0}
                 max={100}
                 type="number"
