@@ -121,6 +121,7 @@ const MedalForm = ({ countries, setCountries }) => {
                 type="number"
                 value={goldMedal}
                 onChange={(e) => setGoldMedal(Number(e.target.value))}
+                onFocus={(e) => e.target.value === "0" && setGoldMedal("")}
               />
             </td>
             <td>
@@ -128,6 +129,7 @@ const MedalForm = ({ countries, setCountries }) => {
                 type="number"
                 value={silverMedal}
                 onChange={(e) => setSilverMedal(Number(e.target.value))}
+                onFocus={(e) => e.target.value === "0" && setSilverMedal("")}
               />
             </td>
             <td>
@@ -135,6 +137,7 @@ const MedalForm = ({ countries, setCountries }) => {
                 type="number"
                 value={bronzeMedal}
                 onChange={(e) => setBronzeMedal(Number(e.target.value))}
+                onFocus={(e) => e.target.value === "0" && setBronzeMedal("")}
               />
             </td>
           </tr>
