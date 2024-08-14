@@ -32,8 +32,8 @@ const CountryList = ({ countries, setCountries }) => {
                 return b.bronze - a.bronze;
               }
             })
-            .map((country, i) => (
-              <tr key={i}>
+            .map((country) => (
+              <tr key={country.id}>
                 <td>{country.country}</td>
                 <td>{country.gold}</td>
                 <td>{country.silver}</td>

@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { v4 as uuid } from "uuid";
 
+// 특수문자, 공백, 숫자 제외시키기
+const REG = /[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/ 0-9]/gim;
+
 const MedalForm = ({ countries, setCountries }) => {
   const [nation, setNation] = useState("");
   const [goldMedal, setGoldMedal] = useState(0);
@@ -8,7 +11,7 @@ const MedalForm = ({ countries, setCountries }) => {
   const [bronzeMedal, setBronzeMedal] = useState(0);
 
   // 국가명 적었는지, 메달 개수가 음수가 아닌지 확인
-  // 국가명은 onChange에서 스페이스바는 막았기 때문에 아무것도 안적은지만 확인
+  // 국가명은 onChange에서 정규식을 이용해 특수문자, 공백, 숫자를 막았기 때문에 아무것도 안적은지만 확인
   // 등록 되어있는 국가인지 확인 후 추가 혹은 이미 존재한다고 상호작용
   // 모두 처리 후 input 초기화
   const addCountryHandler = (e) => {
@@ -110,7 +113,7 @@ const MedalForm = ({ countries, setCountries }) => {
                 type="text"
                 placeholder="국가명을 입력하세요."
                 value={nation}
-                onChange={(e) => setNation(e.target.value.replaceAll(" ", ""))}
+                onChange={(e) => setNation(e.target.value.replace(REG, ""))}
               />
             </td>
             <td>
