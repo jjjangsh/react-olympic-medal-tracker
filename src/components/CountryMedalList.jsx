@@ -23,7 +23,15 @@ const CountryList = ({ countries, setCountries }) => {
         </thead>
         <tbody>
           {countries
-            .sort((a, b) => b.gold - a.gold)
+            .sort((a, b) => {
+              if (b.gold !== a.gold) {
+                return b.gold - a.gold;
+              } else if (b.silver !== a.silver) {
+                return b.silver - a.silver;
+              } else {
+                return b.bronze - a.bronze;
+              }
+            })
             .map((country, i) => (
               <tr key={i}>
                 <td>{country.country}</td>
